@@ -5,8 +5,8 @@ import os
 import random
 
 top = 30
-Id = 1
-
+Id = 0
+matches = []
 
 os.system("mode con cols=25 lines=4")            #settings of console
 
@@ -29,6 +29,8 @@ class Pavlo(QMainWindow):
     def addMatch(self):                                 #button reaction
         global top
         global Id
+        global matches
+        matches.append([str(random.randint(0, 250)),str(random.randint(0, 250)),str(random.randint(0, 250))])
         self.text = QtWidgets.QLabel(self)
         self.text.setText("Match "+str(Id))
         self.text.move(10,top+5)
@@ -38,7 +40,7 @@ class Pavlo(QMainWindow):
         self.cancelButton.setText("Del")
         self.cancelButton.move(60,top)
         self.cancelButton.adjustSize()
-        self.cancelButton.setStyleSheet('background: rgb('+str(random.randint(0, 250))+','+str(random.randint(0, 250))+','+str(random.randint(0, 250))+');')
+        self.cancelButton.setStyleSheet('background: rgb('+matches[Id][0]+','+matches[Id][1]+','+matches[Id][1]+');')
         self.cancelButton.show()
         self.cancelButton.clicked.connect(self.deleteMutch)
         Id += 1
