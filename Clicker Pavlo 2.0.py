@@ -46,12 +46,7 @@ class Pavlo(QMainWindow):
         self.text.deleteLater()
         
 
-        self.text1 = QtWidgets.QLabel(self)             #creating text field
-        self.text1.setText("hello")
-        self.text1.move(10,top)
-        self.text1.adjustSize()
-        self.text1.show()                               #make it visible
-        top += 20                                       #move starter coordinates down
+       
 
  
         
