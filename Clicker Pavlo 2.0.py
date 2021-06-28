@@ -40,7 +40,7 @@ class Pavlo(QMainWindow):
         self.cancelButton.setText("Del")
         self.cancelButton.move(60,top)
         self.cancelButton.adjustSize()
-        self.cancelButton.setStyleSheet('background: rgb('+matches[Id][0]+','+matches[Id][1]+','+matches[Id][1]+');')
+        self.cancelButton.setStyleSheet('background: rgb('+matches[Id][0]+','+matches[Id][1]+','+matches[Id][2]+');')
         self.cancelButton.show()
         self.cancelButton.clicked.connect(self.deleteMutch)
         Id += 1
