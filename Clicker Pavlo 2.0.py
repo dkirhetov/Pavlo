@@ -4,6 +4,7 @@ import sys
 import os
 
 top = 30
+Id = 1
 
 
 os.system("mode con cols=25 lines=4")
@@ -26,11 +27,18 @@ class Pavlo(QMainWindow):
 
     def addMatch(self):
         global top
-        self.text1 = QtWidgets.QLabel(self)
-        self.text1.setText("hello")
-        self.text1.move(10,top)
-        self.text1.adjustSize()
-        self.text1.show()
+        global Id
+        self.text = QtWidgets.QLabel(self)
+        self.text.setText("Match "+str(Id))
+        self.text.move(10,top+5)
+        self.text.adjustSize()
+        self.text.show()
+        self.cancelButton = QtWidgets.QPushButton(self)
+        self.cancelButton.setText("Del")
+        self.cancelButton.move(60,top)
+        self.cancelButton.adjustSize()
+        self.cancelButton.show()
+        Id += 1
         top += 20
 
  
