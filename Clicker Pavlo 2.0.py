@@ -24,18 +24,14 @@ class Pavlo(QMainWindow):
         self.button.adjustSize()
         self.button.clicked.connect(self.addMatch)
 
-
-        
-
-
     def addMatch(self):
         global top
-        self.text1 = QtWidgets.QMessageBox(self)
-        self.text1.setText("Andrey, smotri how it delaetsa")
+        self.text1 = QtWidgets.QPushButton(self)
+        self.text1.setText("hello")
         self.text1.move(10,top)
         self.text1.adjustSize()
-        self.text1.exec()
-        top +=10
+        self.text1.show()
+        top += 20
 
  
         
