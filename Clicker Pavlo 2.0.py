@@ -26,7 +26,7 @@ class Pavlo(QMainWindow):
 
     def addMatch(self):
         global top
-        self.text1 = QtWidgets.QPushButton(self)
+        self.text1 = QtWidgets.QLabel(self)
         self.text1.setText("hello")
         self.text1.move(10,top)
         self.text1.adjustSize()
