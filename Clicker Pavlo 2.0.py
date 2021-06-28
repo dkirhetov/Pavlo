@@ -7,7 +7,7 @@ top = 30
 Id = 1
 
 
-os.system("mode con cols=25 lines=4")            #Andrey, add something, I don't know what is it
+os.system("mode con cols=25 lines=4")            #settings of console
 
 
 class Pavlo(QMainWindow):
@@ -38,10 +38,12 @@ class Pavlo(QMainWindow):
         self.cancelButton.move(60,top)
         self.cancelButton.adjustSize()
         self.cancelButton.show()
+        self.cancelButton.clicked.connect(self.deleteMutch)
         Id += 1
         top += 20
 
- 
+    def deleteMutch(self):
+        self.text.deleteLater()
         
 
         self.text1 = QtWidgets.QLabel(self)             #creating text field
