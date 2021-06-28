@@ -5,7 +5,7 @@ import os
 
 os.system("mode con cols=25 lines=4")
 
-a = 10
+
 class Pavlo(QMainWindow):
     def __init__(self):
         super(Pavlo,self).__init__()
