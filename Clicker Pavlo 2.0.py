@@ -22,7 +22,7 @@ class Pavlo(QMainWindow):
         self.button.setText("Add match")
         self.button.adjustSize()
         self.button.clicked.connect(self.addMatch)
-
+        print(top)
 
         
 
@@ -31,7 +31,7 @@ class Pavlo(QMainWindow):
         self.text1.setText("hello")
         self.text1.move(top,40)
         self.text1.adjustSize()
-        top +=10
+        
 
  
         
