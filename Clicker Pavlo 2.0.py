@@ -9,32 +9,30 @@ os.system("mode con cols=25 lines=4")
 class Pavlo(QMainWindow):
     def __init__(self):
         super(Pavlo,self).__init__()
+        top = 10
 
         self.setWindowTitle("Pavlo")
         self.setGeometry(0,0,500,500)
 
-        self.text = QtWidgets.QLabel(self)
+        self.text1 = QtWidgets.QLabel(self)
 
         self.button = QtWidgets.QPushButton(self)
         self.button.setText("Add match")
         self.button.adjustSize()
+        self.button.clicked.connect(self.addMatch(self,top))
 
-        self.button.clicked.connect(self.addMatch)
 
         
 
 
-    def addMatch(self):
-        self.text.setText("hello")
-        self.text.move(10,40)
-        self.text.adjustSize()
-        
-        self.cancelButton = QtWidgets.QPushButton(self)
-        self.cancelButton.setText("del")
-        self.cancelButton.move(50,40)
-        self.cancelButton.adjustSize()
+    def addMatch(self,top):
+        print(top)
+        self.text1.setText("hello")
+        self.text1.move(10,40)
+        self.text1.adjustSize()
 
-       
+ 
+        
 
 
 
