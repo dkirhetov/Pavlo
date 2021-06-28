@@ -62,7 +62,7 @@ def Clicker():
     app = QApplication(sys.argv)
     window = Pavlo()
     window.show()
-    sys.exit(app.exec_())
+    sys.exit(app.exec_())                               #event loop
 
-if __name__ == "__main__":
-    Clicker()
+if __name__ == "__main__":                              #if main file is run
+    Clicker()                                           #start clicker
