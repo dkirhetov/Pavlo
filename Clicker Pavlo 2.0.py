@@ -38,7 +38,7 @@ class Pavlo(QMainWindow):
         self.cancelButton.setText("Del")
         self.cancelButton.move(60,top)
         self.cancelButton.adjustSize()
-        self.cancelButton.setStyleSheet('background: rgb('+str(random.randint(0, 250))+','+str(random.randint(0, 250))+','+str(random.randint(0, 250))+');')
+        self.cancelButton.setStyleSheet('background: rgba('+str(random.randint(0, 250))+','+str(random.randint(0, 250))+','+str(random.randint(0, 250))+');')
         self.cancelButton.show()
         self.cancelButton.clicked.connect(self.deleteMutch)
         Id += 1
@@ -46,6 +46,7 @@ class Pavlo(QMainWindow):
 
     def deleteMutch(self):
         self.text.deleteLater()
+        self.cancelButton.deleteLater()
         
 
        
