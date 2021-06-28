@@ -18,9 +18,7 @@ class Pavlo(QMainWindow):
 
         self.setWindowTitle("Pavlo")
         self.setGeometry(80,38,500,500)         #initializing the window
-
         
-
         self.button = QtWidgets.QPushButton(self)       #adding button
         self.button.setText("Add match")
         self.button.adjustSize()
@@ -31,11 +29,13 @@ class Pavlo(QMainWindow):
         global Id
         global matches
         matches.append([str(random.randint(0, 250)),str(random.randint(0, 250)),str(random.randint(0, 250))])
+        
         self.text = QtWidgets.QLabel(self)
         self.text.setText("Match "+str(Id))
         self.text.move(10,top+5)
         self.text.adjustSize()
         self.text.show()
+        
         self.cancelButton = QtWidgets.QPushButton(self)
         self.cancelButton.setText("Del")
         self.cancelButton.move(60,top)
@@ -50,14 +50,8 @@ class Pavlo(QMainWindow):
         self.text.deleteLater()
         self.cancelButton.deleteLater()
         
-
-       
-
- 
-        
         #below some shit is happening
         #only Andrey knows it
-
  
 def Clicker():
 
