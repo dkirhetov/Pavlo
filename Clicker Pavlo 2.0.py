@@ -28,6 +28,11 @@ class Pavlo(QMainWindow):
         self.text.setText("hello")
         self.text.move(10,40)
         self.text.adjustSize()
+        
+        self.cancelButton = QtWidgets.QPushButton(self)
+        self.cancelButton.setText("del")
+        self.cancelButton.move(50,40)
+        self.cancelButton.adjustSize()
 
        
 
