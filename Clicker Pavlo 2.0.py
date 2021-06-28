@@ -4,12 +4,14 @@ import sys
 import os
 
 os.system("mode con cols=25 lines=4")
-
+global top
+top = 10
 
 class Pavlo(QMainWindow):
+
     def __init__(self):
         super(Pavlo,self).__init__()
-        top = 10
+
 
         self.setWindowTitle("Pavlo")
         self.setGeometry(0,0,500,500)
@@ -19,17 +21,17 @@ class Pavlo(QMainWindow):
         self.button = QtWidgets.QPushButton(self)
         self.button.setText("Add match")
         self.button.adjustSize()
-        self.button.clicked.connect(self.addMatch(self,top))
+        self.button.clicked.connect(self.addMatch)
 
 
         
 
 
-    def addMatch(self,top):
-        print(top)
+    def addMatch(self):
         self.text1.setText("hello")
-        self.text1.move(10,40)
+        self.text1.move(top,40)
         self.text1.adjustSize()
+        top +=10
 
  
         
