@@ -17,7 +17,7 @@ class Pavlo(QMainWindow):
         self.setWindowTitle("Pavlo")
         self.setGeometry(80,38,500,500)
 
-        self.text1 = QtWidgets.QLabel(self)
+        
 
         self.button = QtWidgets.QPushButton(self)
         self.button.setText("Add match")
@@ -30,9 +30,11 @@ class Pavlo(QMainWindow):
 
     def addMatch(self):
         global top
-        self.text1.setText("hello")
+        self.text1 = QtWidgets.QMessageBox(self)
+        self.text1.setText("Andrey, smotri how it delaetsa")
         self.text1.move(10,top)
         self.text1.adjustSize()
+        self.text1.exec()
         top +=10
 
  
