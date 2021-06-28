@@ -2,6 +2,7 @@ from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QApplication, QMainWindow
 import sys 
 import os
+import random
 
 top = 30
 Id = 1
@@ -37,6 +38,7 @@ class Pavlo(QMainWindow):
         self.cancelButton.setText("Del")
         self.cancelButton.move(60,top)
         self.cancelButton.adjustSize()
+        self.cancelButton.setStyleSheet('background: rgb('+str(random.randint(0, 250))+','+str(random.randint(0, 250))+','+str(random.randint(0, 250))+');')
         self.cancelButton.show()
         self.cancelButton.clicked.connect(self.deleteMutch)
         Id += 1
