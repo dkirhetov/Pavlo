@@ -100,13 +100,13 @@ class Pavlo(QMainWindow):
         self.cancelButton.deleteLater()
         self.text1.deleteLater()
          
+    # def reloadRegion(self):
+        #code 4 reloading Pavlo
+
         #below some shit is happening
         #only Andrey knows it
 
-   # def reloadRegion(self):
-
-
-
+   
 def Clicker():
 
     app = QApplication(sys.argv)
