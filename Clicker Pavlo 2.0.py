@@ -9,7 +9,7 @@ top = 30
 Id = 0
 matchId = 0
 matches = []
-m = 0
+m = False
 
 os.system("mode con cols=25 lines=4")                    #settings of console
 
@@ -20,7 +20,7 @@ class Pavlo(QMainWindow):
 
         self.setWindowTitle("Pavlo")
         self.setGeometry(80,38,280,250)                 #initializing the window
-        self.setWindowIcon(QIcon('icon.png'))
+        self.setWindowIcon(QIcon('icon.png'))           #adding icon
 
         self.buttonT = QtWidgets.QPushButton(self)       #adding button
         self.buttonT.setText("Total")
@@ -36,7 +36,7 @@ class Pavlo(QMainWindow):
 
     def numIT(self):
         global m
-        m = 1  
+        m = True  
                    
 
     def showButton(self):
@@ -87,7 +87,7 @@ class Pavlo(QMainWindow):
         self.text1.adjustSize()
         self.text1.show()
 
-        if m == 1 and (Id % 2 == 0 or Id == 0):
+        if m and (Id % 2 == 0 or Id == 0):
             matchId = matchId
         else:
             matchId +=1
