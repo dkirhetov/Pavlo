@@ -8,7 +8,7 @@ top = 30
 Id = 0
 matches = []
 
-os.system("mode con cols=25 lines=4")            #settings of console
+os.system("mode con cols=25 lines=4")                    #settings of console
 
 
 class Pavlo(QMainWindow):
@@ -17,8 +17,8 @@ class Pavlo(QMainWindow):
         super(Pavlo,self).__init__()
 
         self.setWindowTitle("Pavlo")
-        self.setGeometry(80,38,500,500)         #initializing the window
-        
+        self.setGeometry(80,38,200,300)                 #initializing the window
+
         self.button = QtWidgets.QPushButton(self)       #adding button
         self.button.setText("Add match")
         self.button.adjustSize()
@@ -29,13 +29,13 @@ class Pavlo(QMainWindow):
         global Id
         global matches
         matches.append([str(random.randint(0, 250)),str(random.randint(0, 250)),str(random.randint(0, 250))])
-        
+
         self.text = QtWidgets.QLabel(self)
         self.text.setText("Match "+str(Id))
         self.text.move(10,top+5)
         self.text.adjustSize()
         self.text.show()
-        
+
         self.cancelButton = QtWidgets.QPushButton(self)
         self.cancelButton.setText("Del")
         self.cancelButton.move(60,top)
@@ -43,6 +43,13 @@ class Pavlo(QMainWindow):
         self.cancelButton.setStyleSheet('background: rgb('+matches[Id][0]+','+matches[Id][1]+','+matches[Id][2]+');')
         self.cancelButton.show()
         self.cancelButton.clicked.connect(self.deleteMutch)
+
+        self.text = QtWidgets.QLabel(self)
+        self.text.setText("Press W!")
+        self.text.move(150,top+5)
+        self.text.adjustSize()
+        self.text.show()
+
         Id += 1
         top += 20
 
@@ -50,8 +57,14 @@ class Pavlo(QMainWindow):
         self.text.deleteLater()
         self.cancelButton.deleteLater()
         
+
+       
+
+ 
+        
         #below some shit is happening
         #only Andrey knows it
+
  
 def Clicker():
 
