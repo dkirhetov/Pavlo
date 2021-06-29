@@ -1,5 +1,6 @@
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QApplication, QMainWindow
+from PyQt5.QtGui import QIcon
 import sys 
 import os
 import random
@@ -18,7 +19,8 @@ class Pavlo(QMainWindow):
         super(Pavlo,self).__init__()
 
         self.setWindowTitle("Pavlo")
-        self.setGeometry(80,38,280,300)                 #initializing the window
+        self.setGeometry(80,38,280,250)                 #initializing the window
+        self.setWindowIcon(QIcon('icon.png'))
 
         self.buttonT = QtWidgets.QPushButton(self)       #adding button
         self.buttonT.setText("Total")
@@ -58,7 +60,7 @@ class Pavlo(QMainWindow):
         matches.append([str(random.randint(0, 250)),str(random.randint(0, 250)),str(random.randint(0, 250))])
 
         self.text = QtWidgets.QLabel(self)
-        self.text.setText("Match "+str(matchId))
+        self.text.setText("Match "+str(matchId+1))
         self.text.move(10,top+5)
         self.text.adjustSize()
         self.text.show()
