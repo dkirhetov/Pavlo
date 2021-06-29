@@ -18,7 +18,7 @@ class Pavlo(QMainWindow):
         super(Pavlo,self).__init__()
 
         self.setWindowTitle("Pavlo")
-        self.setGeometry(80,38,200,300)                 #initializing the window
+        self.setGeometry(80,38,280,300)                 #initializing the window
 
         self.buttonT = QtWidgets.QPushButton(self)       #adding button
         self.buttonT.setText("Total")
@@ -71,9 +71,17 @@ class Pavlo(QMainWindow):
         self.cancelButton.show()
         self.cancelButton.clicked.connect(self.deleteMutch)
 
+        #self.reloadButton = QtWidgets.QPushButton(self)
+        #self.reloadButton.setText("Reload")
+        #self.reloadButton.move(140,top)
+        #self.reloadButton.adjustSize()
+        #self.reloadButton.setStyleSheet('background: rgb('+matches[Id][0]+','+matches[Id][1]+','+matches[Id][2]+');')
+        #self.reloadButton.show()
+        #self.reloadButton.clicked.connect(self.reloadRegion)
+
         self.text1 = QtWidgets.QLabel(self)
         self.text1.setText("Press W!")
-        self.text1.move(150,top+5)
+        self.text1.move(220,top+5)
         self.text1.adjustSize()
         self.text1.show()
 
@@ -92,6 +100,10 @@ class Pavlo(QMainWindow):
          
         #below some shit is happening
         #only Andrey knows it
+
+   # def reloadRegion(self):
+
+
 
 def Clicker():
 
