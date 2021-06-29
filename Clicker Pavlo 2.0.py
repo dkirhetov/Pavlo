@@ -6,10 +6,11 @@ import random
 
 top = 30
 Id = 0
+matchId = 0
 matches = []
+m = 0
 
 os.system("mode con cols=25 lines=4")                    #settings of console
-
 
 class Pavlo(QMainWindow):
 
@@ -19,19 +20,45 @@ class Pavlo(QMainWindow):
         self.setWindowTitle("Pavlo")
         self.setGeometry(80,38,200,300)                 #initializing the window
 
+        self.buttonT = QtWidgets.QPushButton(self)       #adding button
+        self.buttonT.setText("Total")
+        self.buttonT.adjustSize()
+        self.buttonT.clicked.connect(self.showButton)
+
+        self.buttonIT = QtWidgets.QPushButton(self)       #adding button
+        self.buttonIT.setText("Ind. total")
+        self.buttonIT.adjustSize()
+        self.buttonIT.move(100,0)
+        self.buttonIT.clicked.connect(self.showButton)
+        self.buttonIT.clicked.connect(self.numIT)
+
+    def numIT(self):
+        global m
+        m = 1  
+                   
+
+    def showButton(self):
+
+        self.buttonT.deleteLater()
+
+        self.buttonIT.deleteLater()
+
         self.button = QtWidgets.QPushButton(self)       #adding button
         self.button.setText("Add match")
         self.button.adjustSize()
         self.button.clicked.connect(self.addMatch)      #button reacting
+        self.button.show()
 
     def addMatch(self):                                 #button reaction
+        global m
         global top
         global Id
+        global matchId
         global matches
         matches.append([str(random.randint(0, 250)),str(random.randint(0, 250)),str(random.randint(0, 250))])
 
         self.text = QtWidgets.QLabel(self)
-        self.text.setText("Match "+str(Id))
+        self.text.setText("Match "+str(matchId))
         self.text.move(10,top+5)
         self.text.adjustSize()
         self.text.show()
@@ -44,11 +71,16 @@ class Pavlo(QMainWindow):
         self.cancelButton.show()
         self.cancelButton.clicked.connect(self.deleteMutch)
 
-        self.text = QtWidgets.QLabel(self)
-        self.text.setText("Press W!")
-        self.text.move(150,top+5)
-        self.text.adjustSize()
-        self.text.show()
+        self.text1 = QtWidgets.QLabel(self)
+        self.text1.setText("Press W!")
+        self.text1.move(150,top+5)
+        self.text1.adjustSize()
+        self.text1.show()
+
+        if m == 1 and (Id % 2 == 0 or Id == 0):
+            matchId = matchId
+        else:
+            matchId +=1
 
         Id += 1
         top += 20
@@ -56,16 +88,11 @@ class Pavlo(QMainWindow):
     def deleteMutch(self):
         self.text.deleteLater()
         self.cancelButton.deleteLater()
-        
-
-       
-
- 
-        
+        self.text1.deleteLater()
+         
         #below some shit is happening
         #only Andrey knows it
 
- 
 def Clicker():
 
     app = QApplication(sys.argv)
